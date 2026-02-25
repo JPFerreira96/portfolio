@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Diario Oficial Digital">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g opacity="0.2">
+    <rect x="110" y="90" width="1040" height="90" rx="16" fill="#67e8f9" />
+    <rect x="110" y="215" width="500" height="420" rx="16" fill="#5eead4" />
+    <rect x="640" y="215" width="510" height="120" rx="16" fill="#2dd4bf" />
+    <rect x="640" y="360" width="510" height="120" rx="16" fill="#14b8a6" />
+    <rect x="640" y="505" width="510" height="130" rx="16" fill="#0d9488" />
+  </g>
+  <text x="120" y="594" fill="#f0fdfa" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">
+    Diario Oficial Digital
+  </text>
+  <text x="120" y="648" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif" font-size="28">
+    Next.js | Laravel | PHP | Sequelize
+  </text>
+</svg>

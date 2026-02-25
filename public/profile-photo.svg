@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="860" viewBox="0 0 720 860" role="img" aria-label="Foto profissional placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24134f" />
+      <stop offset="100%" stop-color="#12072e" />
+    </linearGradient>
+    <linearGradient id="shirt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64d6ff" />
+      <stop offset="100%" stop-color="#768dff" />
+    </linearGradient>
+  </defs>
+  <rect width="720" height="860" fill="url(#bg)" />
+  <circle cx="360" cy="278" r="120" fill="#f4e9d8" />
+  <path d="M250 410 C280 520, 440 520, 470 410 L530 470 C560 500, 600 560, 615 640 L615 860 L105 860 L105 640 C120 560, 160 500, 190 470 Z" fill="url(#shirt)" />
+  <path d="M238 282 C250 162, 474 162, 482 280 C470 230, 438 190, 360 190 C280 190, 250 226, 238 282 Z" fill="#2d1f55" />
+  <circle cx="325" cy="278" r="10" fill="#2a2140" />
+  <circle cx="395" cy="278" r="10" fill="#2a2140" />
+  <path d="M312 334 C340 362, 380 362, 410 334" stroke="#8a6c62" stroke-width="8" fill="none" stroke-linecap="round" />
+  <text x="360" y="790" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#cfd5ff">
+    Substitua por sua foto profissional
+  </text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Portal da Transparencia">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g opacity="0.18">
+    <rect x="80" y="90" width="1120" height="70" rx="14" fill="#38bdf8" />
+    <rect x="80" y="190" width="350" height="430" rx="14" fill="#60a5fa" />
+    <rect x="460" y="190" width="350" height="200" rx="14" fill="#22d3ee" />
+    <rect x="840" y="190" width="360" height="200" rx="14" fill="#67e8f9" />
+    <rect x="460" y="420" width="740" height="200" rx="14" fill="#0ea5e9" />
+  </g>
+  <text x="96" y="594" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">
+    Portal da Transparencia
+  </text>
+  <text x="96" y="648" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="28">
+    ReactJS | Node.js | MySQL | TypeORM
+  </text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Hub de APIs Institucionais">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#7c2d12" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g opacity="0.22" stroke="#fdba74" stroke-width="4" fill="none">
+    <circle cx="260" cy="360" r="110" />
+    <circle cx="640" cy="180" r="90" />
+    <circle cx="640" cy="540" r="90" />
+    <circle cx="1020" cy="360" r="110" />
+    <path d="M350 320 L550 210" />
+    <path d="M350 400 L550 510" />
+    <path d="M730 210 L930 320" />
+    <path d="M730 510 L930 400" />
+  </g>
+  <text x="92" y="594" fill="#fff7ed" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">
+    Hub de APIs Institucionais
+  </text>
+  <text x="92" y="648" fill="#fed7aa" font-family="Segoe UI, Arial, sans-serif" font-size="28">
+    Node.js | Laravel | MySQL | REST APIs
+  </text>
+</svg>
