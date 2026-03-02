@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Sora, Space_Grotesk } from "next/font/google";
 import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
@@ -57,7 +57,10 @@ export const metadata: Metadata = {
     title: "Julio Paulo | Software Developer",
     description:
       "Portfolio profissional com foco em produtos web, arquitetura e impacto no setor publico."
-  },
+  }
+};
+
+export const viewport: Viewport = {
   themeColor: "#0b1420"
 };
 

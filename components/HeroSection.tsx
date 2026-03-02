@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { motion, useReducedMotion, easeOut } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { NeuralBackground } from "./NeuralBackground";
 import styles from "./HeroSection.module.css";
 
@@ -24,7 +24,6 @@ import styles from "./HeroSection.module.css";
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
   const [heroImage, setHeroImage] = useState("/me.jpg");
-  const prefersReducedMotion = useReducedMotion();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,12 +48,10 @@ export function HeroSection() {
     }
   };
 
-  const buttonHover = prefersReducedMotion ? undefined : { y: -2, scale: 1.02 };
-  const buttonTap = prefersReducedMotion ? undefined : { scale: 0.98 };
-  const visualInitial = prefersReducedMotion ? false : { opacity: 0, scale: 0.94 };
-  const visualAnimate = prefersReducedMotion
-    ? { opacity: 1, scale: 1 }
-    : { opacity: 1, scale: 1, transition: { duration: 0.7, ease: easeOut, delay: 0.2 } };
+  const buttonHover = { y: -2, scale: 1.02 };
+  const buttonTap = { scale: 0.98 };
+  const visualInitial = { opacity: 0, scale: 0.94 };
+  const visualAnimate = { opacity: 1, scale: 1, transition: { duration: 0.7, ease: easeOut, delay: 0.2 } };
 
   return (
     <section
@@ -67,7 +64,7 @@ export function HeroSection() {
       <header className={styles.topBar}>
         <div className={styles.topBarInner}>
           <a className={styles.brand} href="#perfil" aria-label="Ir para o topo">
-            Julio Paulo
+            {`<Julio ☕ Paulo/>`}
           </a>
           <nav className={styles.nav} aria-label="Navegacao principal">
             <a className={styles.navLink} href="#perfil">
@@ -98,7 +95,7 @@ export function HeroSection() {
         <motion.div
           className={styles.copy}
           variants={containerVariants}
-          initial={prefersReducedMotion ? false : "hidden"}
+          initial="hidden"
           animate="visible"
         >
           <motion.p className={styles.eyebrow} variants={itemVariants}>

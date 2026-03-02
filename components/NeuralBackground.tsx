@@ -1,10 +1,6 @@
-﻿"use client";
+"use client";
 
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import type { ISourceOptions } from "@tsparticles/engine";
-import { useReducedMotion } from "framer-motion";
+import { useEffect, useMemo } from "react";
 import styles from "./NeuralBackground.module.css";
 
 type NeuralBackgroundProps = {
@@ -12,127 +8,143 @@ type NeuralBackgroundProps = {
   className?: string;
 };
 
+type ParticlesDomEntry = {
+  pJS?: {
+    canvas?: { el?: HTMLCanvasElement | null };
+    fn?: { vendors?: { destroypJS?: () => void } };
+  };
+};
+
+declare global {
+  interface Window {
+    particlesJS?: (tagId: string, params: unknown) => void;
+    pJSDom?: ParticlesDomEntry[];
+  }
+}
+
+const destroyParticlesById = (containerId: string) => {
+  if (!window.pJSDom?.length) {
+    return;
+  }
+
+  window.pJSDom = window.pJSDom.filter((instance) => {
+    const parentId = instance.pJS?.canvas?.el?.parentElement?.id;
+    const isTarget = parentId === containerId;
+
+    if (isTarget) {
+      instance.pJS?.fn?.vendors?.destroypJS?.();
+    }
+
+    return !isTarget;
+  });
+};
+
 export function NeuralBackground({ className }: NeuralBackgroundProps) {
-  const prefersReducedMotion = useReducedMotion();
-  const [ready, setReady] = useState(false);
+  const containerId = "hero-particles-js";
 
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setReady(true);
-    });
-  }, []);
-
-  const options = useMemo<ISourceOptions>(
+  const options = useMemo(
     () => ({
-      fullScreen: { enable: false },
-      fpsLimit: 60,
-      detectRetina: true,
-      background: {
-        color: {
-          value: "transparent"
-        }
-      },
-      interactivity: {
-        detectsOn: "window",
-        events: {
-          onHover: {
-            enable: !prefersReducedMotion,
-            mode: ["grab", "repulse"]
-          },
-          resize: { enable: true }
-        },
-        modes: {
-          grab: {
-            distance: 160,
-            links: {
-              opacity: 0.58
-            }
-          },
-          repulse: {
-            distance: 140,
-            duration: 0.4
-          }
-        }
-      },
       particles: {
-        color: {
-          value: ["#4fe3c1", "#64d7ff", "#45a3ff"]
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
         },
-        links: {
+        color: {
+          value: "#64d7ff"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5,
+          random: true
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
           enable: true,
-          distance: 150,
+          distance: 160,
           color: "#5dd3ff",
-          opacity: 0.32,
+          opacity: 0.4,
           width: 1
         },
         move: {
-          enable: !prefersReducedMotion,
-          speed: 0.65,
-          outModes: {
-            default: "bounce"
-          }
-        },
-        number: {
-          value: prefersReducedMotion ? 26 : 68,
-          density: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "bounce",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: {
             enable: true,
-            area: 900
-          }
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
         },
-        opacity: {
-          value: {
-            min: 0.25,
-            max: 0.62
-          }
-        },
-        size: {
-          value: {
-            min: 1,
-            max: 3
+        modes: {
+          repulse: {
+            distance: 120,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
           }
         }
       },
-      responsive: [
-        {
-          maxWidth: 480,
-          options: {
-            particles: {
-              number: {
-                value: prefersReducedMotion ? 16 : 34
-              },
-              move: {
-                speed: 0.45
-              },
-              links: {
-                distance: 120
-              }
-            }
-          }
-        },
-        {
-          maxWidth: 768,
-          options: {
-            particles: {
-              number: {
-                value: prefersReducedMotion ? 22 : 48
-              }
-            }
-          }
-        }
-      ]
+      retina_detect: true
     }),
-    [prefersReducedMotion]
+    []
   );
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const mount = async () => {
+      await import("particles.js");
+
+      if (cancelled || !window.particlesJS) {
+        return;
+      }
+
+      const container = document.getElementById(containerId);
+      if (!container) {
+        return;
+      }
+
+      destroyParticlesById(containerId);
+      window.particlesJS(containerId, options);
+    };
+
+    // Wait one frame to avoid race conditions during hydration/fast refresh.
+    const frameId = window.requestAnimationFrame(() => {
+      mount();
+    });
+
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(frameId);
+      destroyParticlesById(containerId);
+    };
+  }, [options]);
 
   return (
     <div className={`${styles.layer}${className ? ` ${className}` : ""}`} aria-hidden="true">
-      {ready ? (
-        <Particles id="hero-particles" options={options} className={styles.canvas} />
-      ) : (
-        <div className={styles.canvas} />
-      )}
+      <div id={containerId} className={styles.canvas} />
     </div>
   );
 }
