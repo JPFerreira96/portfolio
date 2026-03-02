@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
-import type { CSSProperties, ReactNode } from "react";
-import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useMemo, useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import styles from "./RevealOnScroll.module.css";
 
 type Direction = "up" | "down" | "left" | "right";
@@ -42,61 +43,45 @@ export function RevealOnScroll({
   once = true
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+  const isInView = useInView(ref, {
+    amount: threshold,
+    margin: "0px 0px -10% 0px",
+    once
+  });
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            if (once) {
-              observer.unobserve(entry.target);
-            }
-          } else if (!once) {
-            setIsVisible(false);
-          }
-        }
-      },
-      {
-        threshold,
-        rootMargin: "0px 0px -9% 0px"
-      }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.disconnect();
+  const variants = useMemo(() => {
+    const offset = resolveOffset(direction, distance);
+    const transition = {
+      duration: duration / 1000,
+      delay: delay / 1000,
+      ease: "easeOut"
     };
-  }, [once, threshold]);
 
-  const offset = resolveOffset(direction, distance);
-  const customStyles = {
-    "--reveal-delay": `${delay}ms`,
-    "--reveal-duration": `${duration}ms`,
-    "--reveal-offset-x": `${offset.x}px`,
-    "--reveal-offset-y": `${offset.y}px`
-  } as CSSProperties;
+    return {
+      hidden: {
+        opacity: 0,
+        x: offset.x,
+        y: offset.y
+      },
+      visible: {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        transition
+      }
+    };
+  }, [delay, direction, distance, duration]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
       className={`${styles.reveal}${className ? ` ${className}` : ""}`}
-      data-visible={isVisible ? "true" : "false"}
-      style={customStyles}
+      initial={prefersReducedMotion ? false : "hidden"}
+      animate={prefersReducedMotion || isInView ? "visible" : "hidden"}
+      variants={variants}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

@@ -1,0 +1,120 @@
+.footer {
+  margin-top: 5rem;
+  padding: 4.5rem 0 2.5rem;
+  border-top: 1px solid rgba(91, 209, 255, 0.18);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(79, 227, 193, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(85, 200, 255, 0.12), transparent 40%);
+}
+
+.inner {
+  width: min(1120px, 90vw);
+  margin: 0 auto;
+  display: grid;
+  gap: 2.2rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+.iconLink {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
+  text-decoration: none;
+  color: var(--text);
+  padding: 0.9rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(12, 26, 41, 0.78);
+  box-shadow: inset 0 0 0 1px rgba(83, 199, 255, 0.05);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 120px;
+}
+
+.iconLink:hover {
+  border-color: rgba(91, 209, 255, 0.6);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 28px rgba(2, 10, 24, 0.35);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(7, 20, 34, 0.9), rgba(14, 33, 52, 0.95));
+  color: #67e8f9;
+  box-shadow: 0 0 0 1px rgba(91, 209, 255, 0.2);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.icon :global(svg) {
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.subFooter {
+  width: min(1120px, 90vw);
+  margin: 0 auto;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(91, 209, 255, 0.12);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 3.8rem 0 2.2rem;
+  }
+
+  .icons {
+    gap: 1rem;
+  }
+
+  .iconLink {
+    min-width: 108px;
+    padding: 0.8rem 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 3rem 0 2rem;
+  }
+
+  .icons {
+    gap: 0.85rem;
+  }
+
+  .iconLink {
+    min-width: 96px;
+    padding: 0.7rem 0.85rem;
+  }
+}

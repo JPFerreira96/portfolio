@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ProjectCard, type ProjectCardProps } from "@/components/ProjectCard";
 
 type ProjectsCarouselProps = {
@@ -10,72 +10,59 @@ type ProjectsCarouselProps = {
 
 export function ProjectsCarousel({ projects, speed = 0.45 }: ProjectsCarouselProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const pauseRef = useRef(false);
-  const frameRef = useRef<number | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     const carousel = carouselRef.current;
-    if (!carousel || projects.length === 0) {
+    const track = trackRef.current;
+    if (!carousel || !track || projects.length === 0) {
       return;
     }
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    const animate = () => {
-      const halfTrack = carousel.scrollWidth / 2;
-
-      if (!pauseRef.current && halfTrack > 0) {
-        carousel.scrollLeft += speed;
-
-        if (carousel.scrollLeft >= halfTrack) {
-          carousel.scrollLeft -= halfTrack;
-        }
+    const updateDuration = () => {
+      const distance = track.scrollWidth / 2;
+      if (distance <= 0) {
+        return;
       }
-
-      frameRef.current = window.requestAnimationFrame(animate);
+      const pixelsPerSecond = Math.max(1, speed * 60);
+      const duration = Math.max(22, Math.min(140, distance / pixelsPerSecond));
+      track.style.setProperty("--projects-marquee-duration", `${duration}s`);
     };
 
-    frameRef.current = window.requestAnimationFrame(animate);
+    updateDuration();
 
+    const resizeObserver = new ResizeObserver(updateDuration);
+    resizeObserver.observe(track);
     return () => {
-      if (frameRef.current !== null) {
-        window.cancelAnimationFrame(frameRef.current);
-      }
+      resizeObserver.disconnect();
     };
   }, [projects.length, speed]);
 
   const duplicatedProjects = [...projects, ...projects];
 
   return (
-    <div className="projects-carousel-shell">
+    <div className="projects-carousel-shell" data-paused={paused ? "true" : "false"}>
       <div
         ref={carouselRef}
         className="projects-carousel"
-        onMouseEnter={() => {
-          pauseRef.current = true;
-        }}
-        onMouseLeave={() => {
-          pauseRef.current = false;
-        }}
         onTouchStart={() => {
-          pauseRef.current = true;
+          setPaused(true);
         }}
         onTouchEnd={() => {
-          pauseRef.current = false;
-        }}
-        onFocusCapture={() => {
-          pauseRef.current = true;
-        }}
-        onBlurCapture={() => {
-          pauseRef.current = false;
+          setPaused(false);
         }}
         aria-label="Carrossel continuo de projetos"
       >
-        <div className="projects-track">
+        <div ref={trackRef} className="projects-track">
           {duplicatedProjects.map((project, index) => (
-            <ProjectCard key={`${project.name}-${index}`} {...project} />
+            <ProjectCard
+              key={`${project.name}-${index}`}
+              {...project}
+              onPauseChange={(paused) => {
+                setPaused(paused);
+              }}
+            />
           ))}
         </div>
       </div>

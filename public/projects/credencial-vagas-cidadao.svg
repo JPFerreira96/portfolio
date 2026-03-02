@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Credencial Vagas Cidadao">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g opacity="0.2">
+    <rect x="120" y="120" width="1040" height="480" rx="24" fill="#2dd4bf" />
+    <rect x="180" y="180" width="320" height="320" rx="20" fill="#0ea5e9" />
+    <rect x="540" y="190" width="520" height="70" rx="14" fill="#99f6e4" />
+    <rect x="540" y="290" width="520" height="70" rx="14" fill="#5eead4" />
+    <rect x="540" y="390" width="520" height="70" rx="14" fill="#14b8a6" />
+    <circle cx="340" cy="540" r="40" fill="#22c55e" />
+    <path d="M320 540 L335 556 L365 524" stroke="#ecfeff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="120" y="612" fill="#ecfdf5" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">
+    Credencial Vagas Cidadao
+  </text>
+  <text x="120" y="666" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="28">
+    Next.js | Express | MySQL | GovBR
+  </text>
+</svg>
