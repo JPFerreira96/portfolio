@@ -129,42 +129,42 @@ const softSkills: SoftSkill[] = [
   {
     title: "Comunicacao tecnica",
     description:
-      "Traduzo demandas de negocio para requisitos claros, alinhando expectativas entre areas tecnicas e administrativas.",
+      "Traduzo demandas de negócio para requisitos claros, alinhando expectativas entre áreas técnicas e administrativas.",
     example:
-      "Facilitei alinhamentos para transformar requisitos do setor publico em backlog priorizado e entregas consistentes."
+      "Facilitei alinhamentos para transformar requisitos do setor público em backlog priorizado e entregas consistentes."
   },
   {
     title: "Trabalho em equipe",
     description:
-      "Colaboro com design, produto e infraestrutura para manter fluidez entre definicao, entrega e suporte.",
+      "Colaboro com design, produto e infraestrutura para manter fluidez entre definição, entrega e suporte.",
     example:
       "Integrei times diferentes para garantir que o Portal da Transparencia tivesse dados e UX consistentes."
   },
   {
-    title: "Resolucao de problemas",
+    title: "Resolução de problemas",
     description:
-      "Investigo causas raiz, priorizo impacto e aplico correcoes com foco em estabilidade e previsibilidade.",
+      "Investigo causas raiz, priorizo impacto e aplico correções com foco em estabilidade e previsibilidade.",
     example:
-      "Reduzi gargalos de consulta em APIs criticas ao revisar queries e estrategia de cache."
+      "Reduzi gargalos de consulta em APIs críticas ao revisar queries e estratégia de cache."
   },
   {
     title: "Adaptabilidade",
     description:
       "Alterno entre backend, frontend e dados conforme o que o projeto precisa para destravar entregas.",
     example:
-      "Assumi tarefas em diferentes camadas para manter o Diario Oficial Digital no prazo."
+      "Assumi tarefas em diferentes camadas para manter o Diário Oficial de Jaboatão dos Guararapes funcionando no prazo."
   },
   {
-    title: "Aprendizado continuo",
+    title: "Aprendizado contínuo",
     description:
-      "Busco atualizacao constante em ferramentas e arquitetura para melhorar qualidade e produtividade.",
+      "Busco atualização constante em ferramentas e arquitetura para melhorar qualidade e produtividade.",
     example:
-      "Implementei padroes de service/repository e documentacao tecnica para acelerar evolucao futura."
+      "Implementei padrões de service/repository e documentações técnicas para acelerar as evoluções futuras."
   },
   {
-    title: "Gestao de tempo",
+    title: "Gestão de tempo",
     description:
-      "Organizo entregas por impacto, garantindo visibilidade e ritmo continuo em ambientes publicos.",
+      "Organizo entregas por impacto, garantindo visibilidade e ritmo contínuo em ambientes públicos.",
     example:
       "Estruturei prioridades semanais para manter entregas frequentes sem perder qualidade."
   }
@@ -172,37 +172,43 @@ const softSkills: SoftSkill[] = [
 
 const timeline: { period: string; title: string; description: string }[] = [
   {
-    period: "2023 - Atual",
-    title: "Software Developer | Prefeitura de Jaboatao dos Guararapes",
+    period: "2024 - Atual",
+    title: "Software Developer Fullstack | Prefeitura de Jaboatao dos Guararapes",
     description:
-      "Desenvolvimento de produtos web com foco em transparencia, confiabilidade e experiencia do usuario."
+      "Desenvolvimento de produtos web com foco em transparencia, confiabilidade e experiência do usuário. Integração de sistemas legados, modelagem de dados e APIs REST para atender demandas de acesso público a informação. Stacks Principais: ReactJS, Next.js, Node.js, Express, MySQL, PostgresSQL, Docker, Active Directory, GovBR e GitHub."
   },
   {
-    period: "2022",
-    title: "Bacharelado em Ciencia da Computacao",
+    period: "2023 - 2024",
+    title: "Maple Tecnologia | Ejes Soluções em TI",
     description:
-      "Formacao com base forte em engenharia de software, estruturas de dados e banco de dados."
+      "Sistemas ERP´s voltados para áreas de saúde, com foco em desenvolvimento de módulos, manutenção evolutiva e suporte técnico. Stacks Principais: PHP(Slim Framework), Ajax, Angular, MySQL, HTML, CSS, Bootstrap e GitHub."
+  },
+  {
+    period: "2022 -2023",
+    title: "IEADPE - Desenvolvedor de Software Estagiário",
+    description:
+      "Responsável por realizar atividades no Sistema de Gerenciamento da Assembleia disponibilizando ferramentas de trabalhos web desenvolvidas para todos os setores e departmanetos. Stacks Principais: Angular, PHP (Laravel), Node.js (Nest.js), Oracle PL/SQL, Jasper Reports, GitHub, Tortoise SVN e CI/CD com Jenkins."
   }
 ];
 
 const testimonials = [
   {
     quote:
-      "Julio entrega com clareza, estrutura e senso de dono. A comunicacao dele torna os projetos mais previsiveis.",
-    name: "Coordenacao de TI",
-    role: "Setor publico"
+      "Júlio é um excelente profissional exemplar, sempre focado em resultados atento a cada detalhe do processo. Sua dedicação e habilidade em entregar soluções eficientes e experiências de qualidade fazem toda a diferença no time.",
+    name: "Larissa Machado - Desenvolvedora UI/UX Designer",
+    role: "Desenvolvimento no Portal da Transparência, Diário Oficial, SIGA e Credencial Vagas"
   },
   {
     quote:
-      "Consegue unir visao de produto e rigor tecnico, garantindo interfaces consistentes com dados confiaveis.",
-    name: "Analista de Dados",
-    role: "Projetos institucionais"
+      "Ótimo Profissional, esforçado e com vontade de aprender cada dia mais, no período em que trabalhamos juntos Júlio era estagiário, mas com tanta garra e vontade de aprender creio que a efetivação é questão de tempo, de longe o melhor estagiário que já tive o prazer de conhecer e trabalhar junto.",
+    name: "Thalis Fernandes - Desenvolvedor Backend",
+    role: "ERP Ecclesia - IEADPE"
   },
   {
     quote:
-      "Tem rapidez para diagnosticar problemas e propor solucoes pragmaticas sem perder qualidade.",
-    name: "Product Partner",
-    role: "Colaboracao interareas"
+      "Um excelente Profissional, amigo, companheiro, leal e um ótimo desenvolvedor. Sempre que entra em um projeto ele procura entender o que se passa, além de ter uma capacidade resolutiva incrível, profissional esse que me ajuda bastante nos projetos, além de que tive a oportunidade não só de trabalhar, mas vê-lo em formação, até em estudos ele sempre foi muito dedicado e esforçado.",
+    name: "Kauê Silva - Desenvolvedor FrontEnd",
+    role: "Desenvolvimento no Credencial Vagas e Portal da Transparência"
   }
 ];
 
@@ -210,18 +216,18 @@ const projects: ProjectCardProps[] = [
   {
     name: "Portal da Transparencia",
     description:
-      "Desenvolvimento de modulos fullstack para consulta publica de dados administrativos com navegacao performatica, paginacao eficiente e integracao com servicos institucionais.",
-    stack: ["ReactJS", "Node.js", "MySQL", "TypeORM"],
+      "Desenvolvimento de layouts e interfaces de alto uso institucional com foco em acessibilidade, paginação eficiente e integração com serviços institucionais. O Portal da Tranparência ganhou o Prêmio de Transparência Diamante 2024 e 2025 do TCE-PE, reconhecendo a excelência na divulgação de informações públicas e o compromisso com a transparência governamental.",
+    stack: ["Next.js"],
     challenge:
-      "Estruturei o consumo de APIs com fallback e normalizacao de resposta para manter consistencia de dados mesmo em cenarios de latencia e payload heterogeneo.",
-    repository: "https://github.com/julioseunome/portal-transparencia",
+      "Estruturei o front-end para melhorar a experiencia do usuário e aumentar a acessibilidade, garantindo uma navegacao fluida e intuitiva.",
+    repository: "https://portaldatransparencia.jaboatao.pe.gov.br/",
     image: "/uploads/portal-transparencia.png",
     imageAlt: "Preview do Portal da Transparencia"
   },
   {
-    name: "Diario Oficial Digital",
+    name: "Diario Oficial de Jaboatão dos Guararapes",
     description:
-      "Implementacao de fluxos de publicacao e leitura publica com foco em rastreabilidade, indexacao de documentos e experiencia de busca por edicao e data.",
+      "Implementacao de fluxos de publicação e leitura pública com foco em rastreabilidade, indexação de documentos e experiência de busca por edição e data.",
     stack: ["Next.js", "Laravel", "PHP", "Sequelize"],
     challenge:
       "Modelei uma arquitetura de publicacao desacoplada que reduziu acoplamento entre processo editorial e camada de entrega, facilitando manutencao continua.",

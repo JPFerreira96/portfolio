@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://julioseunome.github.io"),
+  metadataBase: new URL("https://juliopauloferreira.github.io"),
   title: "Julio Paulo | Software Developer",
   description:
     "Portfolio profissional de Julio Paulo, software developer em Recife com foco em React, Next.js, Node.js e Laravel, atuando em produtos publicos.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "Projetos publicos e solucoes fullstack com foco em performance, arquitetura e qualidade de codigo.",
     type: "website",
     locale: "pt_BR",
-    url: "https://julioseunome.github.io"
+    url: "https://juliopauloferreira.github.io"
   },
   twitter: {
     card: "summary_large_image",
