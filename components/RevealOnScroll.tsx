@@ -55,7 +55,7 @@ export function RevealOnScroll({
     const transition = {
       duration: duration / 1000,
       delay: delay / 1000,
-      ease: "easeOut"
+      ease: [0.16, 1, 0.3, 1] as const
     };
 
     return {

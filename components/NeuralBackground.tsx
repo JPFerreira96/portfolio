@@ -41,7 +41,7 @@ export function NeuralBackground({ className }: NeuralBackgroundProps) {
             enable: !prefersReducedMotion,
             mode: ["grab", "repulse"]
           },
-          resize: true
+          resize: { enable: true }
         },
         modes: {
           grab: {

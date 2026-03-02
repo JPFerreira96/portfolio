@@ -31,7 +31,7 @@ export function SoftSkillsCarousel({ items }: SoftSkillsCarouselProps) {
         transition: {
           duration: prefersReducedMotion ? 0 : 0.6,
           delay: prefersReducedMotion ? 0 : index * 0.08,
-          ease: "easeOut"
+          ease: [0.16, 1, 0.3, 1] as const
         }
       })
     }),
@@ -119,3 +119,4 @@ export function SoftSkillsCarousel({ items }: SoftSkillsCarouselProps) {
     </div>
   );
 }
+

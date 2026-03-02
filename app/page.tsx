@@ -384,7 +384,7 @@ export default function Home() {
             <div className="testimonial-grid">
               {testimonials.map((testimonial) => (
                 <article key={testimonial.name} className="testimonial-card">
-                  <p className="testimonial-quote">"{testimonial.quote}"</p>
+                  <p className="testimonial-quote">&quot;{testimonial.quote}&quot;</p>
                   <div className="testimonial-author">
                     <span>{testimonial.name}</span>
                     <span>{testimonial.role}</span>

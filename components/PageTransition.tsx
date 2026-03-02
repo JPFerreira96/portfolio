@@ -14,10 +14,10 @@ export function PageTransition({ children }: PageTransitionProps) {
 
   const enterAnimation = prefersReducedMotion
     ? { opacity: 1, y: 0 }
-    : { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } };
+    : { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } };
   const exitAnimation = prefersReducedMotion
     ? { opacity: 1, y: 0 }
-    : { opacity: 0, y: -12, transition: { duration: 0.35, ease: "easeIn" } };
+    : { opacity: 0, y: -12, transition: { duration: 0.35, ease: [0.4, 0, 1, 1] as const } };
   const initialAnimation = prefersReducedMotion ? false : { opacity: 0, y: 12 };
 
   return (
