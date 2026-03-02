@@ -1,14 +1,23 @@
 /** @type {import('next').NextConfig} */
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const isVercel = process.env.VERCEL === "1";
 
 const nextConfig = {
-  output: "export",
-  trailingSlash: true,
+  ...(isVercel
+    ? {
+        // Keep Next.js server output on Vercel (no static export mode).
+        distDir: "out"
+      }
+    : {
+        // Static export for environments like GitHub Pages.
+        output: "export",
+        trailingSlash: true
+      }),
   images: {
-    unoptimized: true
+    unoptimized: !isVercel
   },
   basePath,
-  assetPrefix: basePath,
+  assetPrefix: basePath || undefined,
   webpack: (config, { dev }) => {
     if (dev) {
       // Avoid webpack persistent cache corruption in synced folders (e.g. OneDrive).

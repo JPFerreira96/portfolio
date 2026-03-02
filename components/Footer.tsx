@@ -14,13 +14,13 @@ type FooterLink = {
 const links: FooterLink[] = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/julio-paulo-ferreira-83543b218",
+    href: "https://www.linkedin.com/in/júlio-paulo-ferreira-83543b218",
     ariaLabel: "Abrir LinkedIn de Julio Paulo",
     icon: <FaLinkedinIn aria-hidden="true" focusable="false" />
   },
   {
     label: "GitHub",
-    href: "https://github.com/JulioPFerreira96",
+    href: "https://github.com/JPFerreira96",
     ariaLabel: "Abrir GitHub de Julio Paulo",
     icon: <FaGithub aria-hidden="true" focusable="false" />
   },
