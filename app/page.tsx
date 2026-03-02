@@ -231,7 +231,7 @@ const projects: ProjectCardProps[] = [
     stack: ["Next.js", "Laravel", "PHP", "Sequelize"],
     challenge:
       "Modelei uma arquitetura de publicacao desacoplada que reduziu acoplamento entre processo editorial e camada de entrega, facilitando manutencao continua.",
-    repository: "https://github.com/julioseunome/diario-oficial",
+    repository: "https://diariooficial.jaboatao.pe.gov.br/",
     image: "/uploads/diario-oficial.png",
     imageAlt: "Preview do Diario Oficial Digital"
   },
@@ -242,7 +242,7 @@ const projects: ProjectCardProps[] = [
     stack: ["Next.js", "Express", "MySQL", "Python", "Active Directory"],
     challenge:
       "Implementei a integracao com o Active Directory via API em Python e organizei a arquitetura MVC com camadas DAO e DTO para manter contratos de dados consistentes.",
-    repository: "https://github.com/julioseunome",
+    repository: "https://credencialvagas.jaboatao.pe.gov.br",
     image: "/uploads/credencial-vagas-admin.png",
     imageAlt: "Preview do Credencial Vagas Administrativo"
   },
@@ -253,7 +253,7 @@ const projects: ProjectCardProps[] = [
     stack: ["Next.js", "Express", "MySQL", "GovBR"],
     challenge:
       "Integrei autenticacao GovBR e o fluxo de emissao digital com regras de elegibilidade, garantindo acesso remoto e seguro ao beneficio.",
-    repository: "https://github.com/julioseunome",
+    repository: "https://credencialvagas.jaboatao.pe.gov.br/",
     image: "/uploads/credencial-vagas-cidadao.png",
     imageAlt: "Preview do Credencial Vagas Cidadao"
   },
@@ -264,7 +264,7 @@ const projects: ProjectCardProps[] = [
     stack: ["Next.js", "Express", "Scriptcase", "Active Directory"],
     challenge:
       "Conectei o front moderno ao Scriptcase legado via BFF, garantindo autenticacao integrada ao Active Directory e padroes consistentes de seguranca.",
-    repository: "https://github.com/julioseunome/hub-apis",
+    repository: "...",
     image: "/uploads/siga.png",
     imageAlt: "Preview do Portal SIGA"
   }
