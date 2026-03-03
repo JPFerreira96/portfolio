@@ -120,6 +120,14 @@ const stackGroups: { category: string; items: StackItem[] }[] = [
       {
         name: "JUnit",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg"
+      },
+      {
+        name: "GitHub Actions",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg"
+      },
+      {
+        name: "Jenkins",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
       }
     ]
   }
