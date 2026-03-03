@@ -146,7 +146,7 @@ const softSkills: SoftSkill[] = [
     description:
       "Colaboro com design, produto e infraestrutura para manter fluidez entre definição, entrega e suporte.",
     example:
-      "Integrei times diferentes para garantir que o Portal da Transparencia tivesse dados e UX consistentes."
+      "Integrei times diferentes para garantir que o Portal da Transparência tivesse dados e UX consistentes."
   },
   {
     title: "Resolução de problemas",
@@ -183,7 +183,7 @@ const timeline: { period: string; title: string; description: string }[] = [
     period: "2024 - Atual",
     title: "Software Developer Fullstack | Prefeitura de Jaboatao dos Guararapes",
     description:
-      "Desenvolvimento de produtos web com foco em transparencia, confiabilidade e experiência do usuário. Integração de sistemas legados, modelagem de dados e APIs REST para atender demandas de acesso público a informação. Stacks Principais: ReactJS, Next.js, Node.js, Express, MySQL, PostgresSQL, Docker, Active Directory, GovBR e GitHub."
+      "Desenvolvimento de produtos web com foco em transparência, confiabilidade e experiência do usuário. Integração de sistemas legados, modelagem de dados e APIs REST para atender demandas de acesso público a informação. Stacks Principais: ReactJS, Next.js, Node.js, Express, MySQL, PostgresSQL, Docker, Active Directory, GovBR e GitHub."
   },
   {
     period: "2023 - 2024",
@@ -222,48 +222,48 @@ const testimonials = [
 
 const projects: ProjectCardProps[] = [
   {
-    name: "Portal da Transparencia",
+    name: "Portal da Transparência",
     description:
-      "Desenvolvimento de layouts e interfaces de alto uso institucional com foco em acessibilidade, paginação eficiente e integração com serviços institucionais. O Portal da Tranparência ganhou o Prêmio de Transparência Diamante 2024 e 2025 do TCE-PE, reconhecendo a excelência na divulgação de informações públicas e o compromisso com a transparência governamental.",
+      "Desenvolvimento de layouts e interfaces de alto uso institucional com foco em acessibilidade, paginação eficiente e integração com serviços institucionais. O Portal da Transparência ganhou o Prêmio de Transparência Diamante 2024 e 2025 do TCE-PE, reconhecendo a excelência na divulgação de informações públicas e o compromisso com a transparência governamental.",
     stack: ["Next.js"],
     challenge:
-      "Estruturei o front-end para melhorar a experiencia do usuário e aumentar a acessibilidade, garantindo uma navegacao fluida e intuitiva.",
+      "Estruturei o front-end para melhorar a experiência do usuário e aumentar a acessibilidade, garantindo uma navegação fluida e intuitiva.",
     repository: "https://portaldatransparencia.jaboatao.pe.gov.br/",
     image: "/uploads/portal-transparencia.png",
-    imageAlt: "Preview do Portal da Transparencia"
+    imageAlt: "Preview do Portal da Transparência"
   },
   {
-    name: "Diario Oficial de Jaboatão dos Guararapes",
+    name: "Diário Oficial de Jaboatão dos Guararapes",
     description:
-      "Implementacao de fluxos de publicação e leitura pública com foco em rastreabilidade, indexação de documentos e experiência de busca por edição e data.",
-    stack: ["Next.js", "Laravel", "PHP", "Sequelize"],
+      "Implementação de fluxos de publicação e leitura pública com foco em rastreabilidade, indexação de documentos e experiência de busca por edição, data e texto.",
+    stack: ["Next.js", "Express", "MySQL", "Sequelize"],
     challenge:
       "Modelei uma arquitetura de publicacao desacoplada que reduziu acoplamento entre processo editorial e camada de entrega, facilitando manutencao continua.",
     repository: "https://diariooficial.jaboatao.pe.gov.br/",
     image: "/uploads/diario-oficial.png",
-    imageAlt: "Preview do Diario Oficial Digital"
+    imageAlt: "Preview do Diário Oficial Digital"
   },
   {
     name: "Credencial Vagas Administrativo",
     description:
-      "Portal administrativo para emissao e validacao de credenciais de vagas preferenciais com autenticacao interna via Active Directory e fluxo de aprovacao padronizado.",
+      "Portal administrativo para emissão e validação de credenciais de vagas preferenciais com autenticação interna via Active Directory e fluxo de aprovação padronizado.",
     stack: ["Next.js", "Express", "MySQL", "Python", "Active Directory"],
     challenge:
-      "Implementei a integracao com o Active Directory via API em Python e organizei a arquitetura MVC com camadas DAO e DTO para manter contratos de dados consistentes.",
+      "Implementei a integração com o Active Directory via API em Python e organizei a arquitetura MVC com camadas DAO e DTO para manter contratos de dados consistentes.",
     repository: "https://credencialvagas.jaboatao.pe.gov.br",
     image: "/uploads/credencial-vagas-admin.png",
     imageAlt: "Preview do Credencial Vagas Administrativo"
   },
   {
-    name: "Credencial Vagas Cidadao",
+    name: "Credencial Vagas Cidadão",
     description:
-      "Ambiente do cidadao integrado ao GovBR para solicitacao digital da credencial de vagas preferenciais, reduzindo burocracia para idosos, autistas, gestantes e PCDs.",
+      "Ambiente do cidadão integrado ao GovBR para solicitação e emissão digital da credencial de vagas preferenciais, reduzindo burocracia para idosos, autistas, gestantes e PCDs.",
     stack: ["Next.js", "Express", "MySQL", "GovBR"],
     challenge:
-      "Integrei autenticacao GovBR e o fluxo de emissao digital com regras de elegibilidade, garantindo acesso remoto e seguro ao beneficio.",
+      "Integrei autenticação GovBR e o fluxo de emissão digital com regras de elegibilidade, garantindo acesso remoto e seguro ao benefício.",
     repository: "https://credencialvagas.jaboatao.pe.gov.br/",
     image: "/uploads/credencial-vagas-cidadao.png",
-    imageAlt: "Preview do Credencial Vagas Cidadao"
+    imageAlt: "Preview do Credencial Vagas Cidadão"
   },
   {
     name: "Portal SIGA",
@@ -279,10 +279,10 @@ const projects: ProjectCardProps[] = [
 ];
 
 const differentiators = [
-  "Decisoes tecnicas orientadas a manutencao, priorizando legibilidade, separacao de responsabilidades e evolucao incremental.",
-  "Aplicacao pratica de Clean Code e SOLID em APIs e interfaces de alto uso institucional.",
-  "Experiencia com produtos de interesse publico, onde confiabilidade, clareza de informacao e estabilidade operacional sao criticos.",
-  "Visao fullstack para conectar UX, regra de negocio e persistencia sem perder consistencia de arquitetura."
+  "Decisões técnicas orientadas a manutenção, priorizando legibilidade, separação de responsabilidades e evolução incremental.",
+  "Aplicação pratica de Clean Code e SOLID em APIs e interfaces de alto uso institucional.",
+  "Experiência com produtos de interesse público, onde confiabilidade, clareza de informação e estabilidade operacional são críticos.",
+  "Visão fullstack para conectar UX, regra de negócio e persistência sem perder consistência de arquitetura."
 ];
 
 export default function Home() {
@@ -296,10 +296,10 @@ export default function Home() {
             <SectionTitle
               overline="Sobre mim"
               title="Desenvolvedor fullstack focado em engenharia de produto"
-              subtitle="Atuo em todo o ciclo da entrega: da modelagem tecnica a interface final, com disciplina de codigo e visao de longo prazo."
+              subtitle="Atuo em todo o ciclo da entrega: da modelagem técnica a interface final, com disciplina de código e visão de longo prazo."
             />
             <p className="about-text">
-              Minha atuacao combina entrega pratica com rigor técnico. Tenho experiência em projetos
+              Minha atuação combina entrega prática com rigor técnico. Tenho experiência em projetos
               como Portal da Transparência e Diário Oficial, construindo soluções com APIs REST,
               modelagem de dados relacional e interfaces responsivas. Busco sempre reduzir
               complexidade acidental, melhorar previsibilidade de manutenção e acelerar evolução
@@ -311,8 +311,8 @@ export default function Home() {
         <RevealOnScroll delay={70} direction="up">
           <section id="stack" className="content-section">
             <SectionTitle
-              overline="Stack tecnologica"
-              title="Tecnologias organizadas por dominio"
+              overline="Stack tecnológica"
+              title="Tecnologias organizadas por domínio"
               subtitle="Hard skills e frameworks com foco nas tecnologias que uso no dia a dia."
             />
             <div className="stack-grid">
@@ -327,8 +327,8 @@ export default function Home() {
           <section id="soft-skills" className="content-section">
             <SectionTitle
               overline="Soft skills"
-              title="Competencias humanas que aceleram a entrega"
-              subtitle="Experiencia pratica em colaboracao, comunicacao e resolucao de problemas reais."
+              title="Competências humanas que aceleram a entrega"
+              subtitle="Experiência prática em colaboração, comunicação e resolução de problemas reais."
             />
             <SoftSkillsCarousel items={softSkills} />
           </section>
@@ -339,7 +339,7 @@ export default function Home() {
             <SectionTitle
               overline="Timeline"
               title="Carreira com foco em impacto publico"
-              subtitle="Marcos que sintetizam minha trajetoria profissional e formacao academica."
+              subtitle="Marcos que sintetizam minha trajetória profissional e formação acadêmica."
             />
             <ol className="timeline">
               {timeline.map((item) => (
@@ -360,8 +360,8 @@ export default function Home() {
           <section id="projetos" className="content-section">
             <SectionTitle
               overline="Projetos reais"
-              title="Entregas com contexto tecnico e impacto operacional"
-              subtitle="Carrossel continuo com pausa no hover. Clique abre o site do projeto e, se nao houver, o repositorio."
+              title="Entregas com contexto técnico e impacto operacional"
+              subtitle="Carrossel contínuo com pausa no hover. Clique abre o site do projeto e, se nao houver, o repositório."
             />
             <ProjectsCarousel projects={projects} />
           </section>
@@ -370,9 +370,9 @@ export default function Home() {
         <RevealOnScroll delay={200} direction="up">
           <section id="diferenciais" className="content-section">
             <SectionTitle
-              overline="Diferenciais tecnicos"
+              overline="Diferenciais técnicos"
               title="Como eu construo software"
-              subtitle="Principios aplicados no dia a dia para manter qualidade sem travar entrega."
+              subtitle="Princípios aplicados no dia a dia para manter qualidade sem travar entrega."
             />
             <ul className="diff-list">
               {differentiators.map((item) => (
@@ -386,8 +386,8 @@ export default function Home() {
           <section id="depoimentos" className="content-section">
             <SectionTitle
               overline="Depoimentos"
-              title="Feedbacks que refletem colaboracao e entrega"
-              subtitle="Amostras de formato. Substitua por depoimentos reais quando desejar."
+              title="Feedbacks que refletem colaboração e entrega"
+              subtitle="Depoimentos reais de colegas e parceiros de trabalho, destacando habilidades técnicas e interpessoais."
             />
             <div className="testimonial-grid">
               {testimonials.map((testimonial) => (
