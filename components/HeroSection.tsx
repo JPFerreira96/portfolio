@@ -85,9 +85,9 @@ export function HeroSection() {
             <a className={styles.navLink} href="#carreira">
               Carreira
             </a>
-            <a className={styles.navLink} href="#contato">
+            {/* <a className={styles.navLink} href="#contato">
               Contato
-            </a>
+            </a> */}
           </nav>
         </div>
       </header>
