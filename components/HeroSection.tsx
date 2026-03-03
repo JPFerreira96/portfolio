@@ -118,7 +118,7 @@ export function HeroSection() {
               Ver Projetos
             </motion.a>
             <motion.a
-              href="/curriculo-julio-paulo.pdf"
+              href="/uploads/CurrículoJulioPauloFerreira.pdf"
               className={styles.secondaryCta}
               aria-label="Baixar curriculo em PDF"
               whileHover={buttonHover}
