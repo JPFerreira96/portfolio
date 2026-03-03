@@ -45,7 +45,7 @@ export function Footer() {
       <div className={styles.inner}>
         <h2 className={styles.title}>Vamos conversar?</h2>
         <p className={styles.subtitle}>
-          Estou disponivel para oportunidades fullstack, colaboracoes tecnicas e projetos com impacto
+          Estou disponível para oportunidades fullstack, colaborações técnicas e projetos com impacto
           real. Escolha o canal ideal para falar comigo.
         </p>
         <div className={styles.icons}>
