@@ -28,11 +28,19 @@ const destroyParticlesById = (containerId: string) => {
   }
 
   window.pJSDom = window.pJSDom.filter((instance) => {
-    const parentId = instance.pJS?.canvas?.el?.parentElement?.id;
+    const canvas = instance.pJS?.canvas?.el;
+    const parentId = canvas?.parentElement?.id;
     const isTarget = parentId === containerId;
 
     if (isTarget) {
-      instance.pJS?.fn?.vendors?.destroypJS?.();
+      try {
+        instance.pJS?.fn?.vendors?.destroypJS?.();
+      } catch {
+        // Canvas or parent already removed from DOM — safe to ignore.
+        if (canvas?.parentNode) {
+          canvas.parentNode.removeChild(canvas);
+        }
+      }
     }
 
     return !isTarget;
