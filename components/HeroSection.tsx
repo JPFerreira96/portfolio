@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, easeOut } from "framer-motion";
 import { NeuralBackground } from "./NeuralBackground";
 import styles from "./HeroSection.module.css";
@@ -24,6 +24,14 @@ import styles from "./HeroSection.module.css";
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
   const [heroImage, setHeroImage] = useState("/me.jpg");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = () => setMenuOpen(false);
+    window.addEventListener("resize", close);
+    return () => window.removeEventListener("resize", close);
+  }, [menuOpen]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,23 +74,33 @@ export function HeroSection() {
           <a className={styles.brand} href="#perfil" aria-label="Ir para o topo">
             {`<Julio ☕ Paulo/>`}
           </a>
-          <nav className={styles.nav} aria-label="Navegacao principal">
-            <a className={styles.navLink} href="#perfil">
+          <button
+            className={styles.hamburger}
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className={`${styles.hamburgerBar} ${menuOpen ? styles.hamburgerOpen : ""}`} />
+            <span className={`${styles.hamburgerBar} ${menuOpen ? styles.hamburgerOpen : ""}`} />
+            <span className={`${styles.hamburgerBar} ${menuOpen ? styles.hamburgerOpen : ""}`} />
+          </button>
+          <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`} aria-label="Navegacao principal">
+            <a className={styles.navLink} href="#perfil" onClick={() => setMenuOpen(false)}>
               Perfil
             </a>
-            <a className={styles.navLink} href="#sobre">
+            <a className={styles.navLink} href="#sobre" onClick={() => setMenuOpen(false)}>
               Sobre mim
             </a>
-            <a className={styles.navLink} href="#stack">
+            <a className={styles.navLink} href="#stack" onClick={() => setMenuOpen(false)}>
               Habilidades
             </a>
-            <a className={styles.navLink} href="#soft-skills">
+            <a className={styles.navLink} href="#soft-skills" onClick={() => setMenuOpen(false)}>
               Soft skills
             </a>
-            <a className={styles.navLink} href="#projetos">
+            <a className={styles.navLink} href="#projetos" onClick={() => setMenuOpen(false)}>
               Projetos
             </a>
-            <a className={styles.navLink} href="#carreira">
+            <a className={styles.navLink} href="#carreira" onClick={() => setMenuOpen(false)}>
               Carreira
             </a>
             {/* <a className={styles.navLink} href="#contato">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { ProjectCard, type ProjectCardProps } from "@/components/ProjectCard";
 
 type ProjectsCarouselProps = {
@@ -39,6 +39,40 @@ export function ProjectsCarousel({ projects, speed = 0.45 }: ProjectsCarouselPro
     };
   }, [projects.length, speed]);
 
+  const shift = useCallback((direction: "prev" | "next") => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const cardWidth = track.querySelector<HTMLElement>(".project-card")?.offsetWidth ?? 376;
+    const gap = 16;
+    const step = cardWidth + gap;
+
+    const computed = getComputedStyle(track);
+    const matrix = new DOMMatrix(computed.transform);
+    const currentX = matrix.m41;
+
+    const half = track.scrollWidth / 2;
+    const offset = direction === "next" ? -step : step;
+    let newX = currentX + offset;
+
+    if (newX > 0) newX -= half;
+    if (newX < -half) newX += half;
+
+    track.style.animation = "none";
+    track.style.transform = `translateX(${newX}px)`;
+
+    requestAnimationFrame(() => {
+      track.style.removeProperty("animation");
+      track.style.removeProperty("transform");
+      const fraction = Math.abs(newX) / half;
+      const totalDuration = Number.parseFloat(
+        track.style.getPropertyValue("--projects-marquee-duration") || "60"
+      );
+      const remaining = totalDuration * (1 - fraction);
+      track.style.animationDelay = `-${totalDuration - remaining}s`;
+    });
+  }, []);
+
   const duplicatedProjects = [...projects, ...projects];
 
   return (
@@ -65,6 +99,22 @@ export function ProjectsCarousel({ projects, speed = 0.45 }: ProjectsCarouselPro
             />
           ))}
         </div>
+      </div>
+      <div className="projects-nav">
+        <button
+          className="projects-nav-btn"
+          onClick={() => shift("prev")}
+          aria-label="Projeto anterior"
+        >
+          ‹
+        </button>
+        <button
+          className="projects-nav-btn"
+          onClick={() => shift("next")}
+          aria-label="Próximo projeto"
+        >
+          ›
+        </button>
       </div>
     </div>
   );
